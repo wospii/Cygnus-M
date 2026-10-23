@@ -32,16 +32,6 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
-
-        // ネットサーフィンモード(4)のK: 左クリックしてからキーボードモードへ戻る
-        click_to_kb: click_to_kb {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            display-name = "Click+Keyboard";
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_tap &mkp MB1 &tog MOUSE>;
-        };
     };
 
     behaviors {
@@ -61,25 +51,6 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;
-        };
-
-        // ネットサーフィンモード(4)のC/V: Ctrl(またはCmd)を押している時だけ反応＝コピペ用
-        ctl_c: ctl_c {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            display-name = "Ctrl-only C";
-            bindings = <&none>, <&kp C>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI)>;
-        };
-
-        ctl_v: ctl_v {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            display-name = "Ctrl-only V";
-            bindings = <&none>, <&kp V>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI)>;
         };
     };
 
