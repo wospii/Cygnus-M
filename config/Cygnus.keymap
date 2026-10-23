@@ -66,6 +66,16 @@
 
             tap-ms = <20>;
         };
+
+        // 叩けばマウスボタン、長押しでレイヤー（左親指の右キー用: 長押し=レイヤー5 / 叩く=左クリック）
+        lt_click: lt_click {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Layer-Click";
+            bindings = <&mo>, <&mkp>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
